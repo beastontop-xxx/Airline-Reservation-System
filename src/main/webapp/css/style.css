@@ -1,0 +1,170 @@
+/* ================================================================
+   AIRLINE RESERVATION SYSTEM – Global Stylesheet (style.css)
+   Placed in: WebContent/css/style.css
+   ================================================================ */
+
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+}
+
+a { color: #1a73e8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Navbar ───────────────────────────────────────────────────── */
+.navbar {
+    background: linear-gradient(135deg, #0d47a1, #1565c0);
+    color: #fff;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+.navbar .brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+}
+.navbar .brand span { color: #90caf9; }
+.navbar nav a {
+    color: #e3f2fd;
+    margin-left: 1.5rem;
+    font-size: .95rem;
+    transition: color .2s;
+}
+.navbar nav a:hover { color: #fff; text-decoration: none; }
+
+/* ── Page wrapper ─────────────────────────────────────────────── */
+.page-wrapper {
+    max-width: 960px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+/* ── Cards ────────────────────────────────────────────────────── */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.card h2 {
+    margin-bottom: 1.4rem;
+    color: #0d47a1;
+    font-size: 1.4rem;
+}
+
+/* ── Forms ────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 1.1rem; }
+.form-group label {
+    display: block;
+    margin-bottom: .4rem;
+    font-weight: 600;
+    font-size: .9rem;
+    color: #555;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: .65rem .9rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: .95rem;
+    transition: border-color .2s;
+}
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26,115,232,.15);
+}
+
+/* ── Buttons ──────────────────────────────────────────────────── */
+.btn {
+    display: inline-block;
+    padding: .65rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+}
+.btn:active { transform: scale(.97); }
+.btn-primary  { background: #1a73e8; color: #fff; }
+.btn-primary:hover  { background: #1558b0; }
+.btn-success  { background: #2e7d32; color: #fff; }
+.btn-success:hover  { background: #1b5e20; }
+.btn-danger   { background: #c62828; color: #fff; font-size: .85rem; padding: .45rem 1rem; }
+.btn-danger:hover   { background: #a31515; }
+.btn-secondary { background: #546e7a; color: #fff; }
+.btn-secondary:hover { background: #37474f; }
+
+/* ── Alerts ───────────────────────────────────────────────────── */
+.alert {
+    padding: .8rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    font-size: .92rem;
+}
+.alert-error   { background: #ffebee; color: #b71c1c; border-left: 4px solid #c62828; }
+.alert-success { background: #e8f5e9; color: #1b5e20; border-left: 4px solid #2e7d32; }
+.alert-info    { background: #e3f2fd; color: #0d47a1; border-left: 4px solid #1565c0; }
+
+/* ── Tables ───────────────────────────────────────────────────── */
+.table-wrapper { overflow-x: auto; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .93rem;
+}
+thead th {
+    background: #0d47a1;
+    color: #fff;
+    padding: .75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+tbody tr:nth-child(even) { background: #f5f8ff; }
+tbody tr:hover { background: #e8f0fe; }
+tbody td { padding: .7rem 1rem; border-bottom: 1px solid #e0e0e0; }
+
+/* ── Status badges ────────────────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: .25rem .65rem;
+    border-radius: 12px;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .4px;
+}
+.badge-confirmed  { background: #e8f5e9; color: #2e7d32; }
+.badge-cancelled  { background: #ffebee; color: #c62828; }
+
+/* ── Page title strip ─────────────────────────────────────────── */
+.page-title {
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #1a73e8;
+    padding-left: .85rem;
+}
+.page-title h1 { font-size: 1.6rem; color: #0d47a1; }
+.page-title p  { color: #666; font-size: .93rem; margin-top: .25rem; }
+
+/* ── Inline link row ──────────────────────────────────────────── */
+.link-row { margin-top: 1.2rem; font-size: .9rem; color: #666; }
+
+/* ── Responsive tweaks ────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .navbar { padding: 0 1rem; }
+    .card   { padding: 1.2rem; }
+    .page-wrapper { margin: 1.2rem auto; }
+}
