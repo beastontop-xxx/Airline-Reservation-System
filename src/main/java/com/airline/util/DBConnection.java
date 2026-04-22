@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static final String URL = "jdbc:mysql://airline-mysql-slaughtergangsoulsnatcher69420-3600.h.aivencloud.com:20396/defaultdb?ssl-mode=REQUIRED&useSSL=true&serverTimezone=UTC";
+    private static final String URL = "jdbc:mysql://airline-mysql-slaughtergangsoulsnatcher69420-3600.h.aivencloud.com:20396/defaultdb?useSSL=true&sslMode=REQUIRED&serverTimezone=UTC";
     private static final String USER     = "avnadmin";
     private static final String PASSWORD = System.getenv("DB_PASSWORD"); 
 
