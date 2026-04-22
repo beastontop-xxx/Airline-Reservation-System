@@ -1,4 +1,4 @@
-# FlyNowTwinTower — Online Airline Reservation System
+# FlyNow — Online Airline Reservation System
 
 A full-stack Java web application built with Servlets, JDBC, JSP, and MySQL using the MVC/DAO architecture pattern.
 
