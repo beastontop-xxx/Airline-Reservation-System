@@ -18,31 +18,41 @@ public class UserDAO {
      */
     public boolean registerUser(User user) {
         final String SQL = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(SQL)) {
 
+            // 🔥 DEBUG LINE
+            System.out.println("✅ DB CONNECTED SUCCESSFULLY");
+
             ps.setString(1, user.getName());
             ps.setString(2, user.getEmail());
-            ps.setString(3, user.getPassword());   // store plain-text; hash in production
-            return ps.executeUpdate() > 0;
+            ps.setString(3, user.getPassword());
+
+            int rows = ps.executeUpdate();
+
+            // 🔥 DEBUG LINE
+            System.out.println("✅ Rows inserted: " + rows);
+
+            return rows > 0;
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("❌ DB ERROR OCCURRED");
+            e.printStackTrace(); // VERY IMPORTANT
             return false;
         }
     }
 
     /**
      * Validates login credentials.
-     *
-     * @param email    the user's email
-     * @param password the user's password
-     * @return the matching User object, or null if not found
      */
     public User validateUser(String email, String password) {
         final String SQL = "SELECT * FROM users WHERE email = ? AND password = ?";
+
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(SQL)) {
+
+            System.out.println("✅ DB CONNECTED FOR LOGIN");
 
             ps.setString(1, email);
             ps.setString(2, password);
@@ -57,9 +67,12 @@ public class UserDAO {
                     return u;
                 }
             }
+
         } catch (SQLException e) {
+            System.out.println("❌ LOGIN DB ERROR");
             e.printStackTrace();
         }
+
         return null;
     }
 }
