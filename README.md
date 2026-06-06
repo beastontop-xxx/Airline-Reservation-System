@@ -270,7 +270,7 @@ Render automatically detects the push and redeploys. You can also trigger it man
 
 ---
 
-## Troubleshooting
+## Troubleshooting 
 
 | Problem | Fix |
 |---------|-----|
@@ -280,7 +280,7 @@ Render automatically detects the push and redeploys. You can also trigger it man
 | DB connection refused locally | Make sure MySQL is running: `brew services start mysql` |
 | DB connection error on Render | Verify DB_PASSWORD environment variable is set correctly |
 | Old code still showing | Hard refresh with Cmd+Shift+R or clear browser cache |
-| Port 8080 already in use | Run `catalina stop` then `catalina start` |
+| Port 8080 already in use | Run `catalina stop` then `catalina start` |.
 
 ---
 
